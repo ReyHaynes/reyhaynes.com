@@ -9,7 +9,7 @@ type ThemeToggleButtonProps = {
 const ThemeToggleButton = ({ toggle, isThemeDark }: ThemeToggleButtonProps) => (
     <button className="button--theme-toggle" onClick={toggle}>
       <div className="toggle"></div>
-      {isThemeDark ? 'Day' : 'Night'}
+      <span>{isThemeDark ? 'Day' : "Night"}</span>
     </button>
 )
 

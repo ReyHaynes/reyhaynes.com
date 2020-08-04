@@ -14,8 +14,8 @@ const App = () => {
 
   return (
     <div className={'app ' + (isThemeDark ? 'app--theme-dark': 'app--theme-light')}>
-      <div className='app-background--theme-light'></div>
-      <div className='app-background--theme-dark'></div>
+      <div className='background--theme-light'></div>
+      <div className='background--theme-dark'></div>
       <ThemeToggleButton toggle={toggleTheme} isThemeDark={isThemeDark} />
     </div>
   );

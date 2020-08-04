@@ -9,19 +9,19 @@ $root: $root;
 
   &#{$appLightTheme} {
     color: theme-color('light','color');
-    & #{$root}-background--theme-light {
+    & .background--theme-light {
       opacity: 1;
     }
   }
 
   &#{$appDarkTheme} {
     color: theme-color('dark','color');
-    & #{$root}-background--theme-dark {
+    & .background--theme-dark {
       opacity: 1;
     }
   }
 
-  #{$root}-background {
+  .background {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,14 +33,14 @@ $root: $root;
     transition: opacity $appThemeTransitionTime;
 
     &--theme-light {
-      @extend #{$root}-background;
+      @extend .background;
       background-color: theme-color('light','background-color');
       background-image: url('../assets/light-bg-selfie.jpg');
       opacity: 0;
     }
 
     &--theme-dark {
-      @extend #{$root}-background;
+      @extend .background;
       background-color: theme-color('dark','background-color');
       background-image: url('../assets/dark-bg-selfie.jpg');
       opacity: 0;

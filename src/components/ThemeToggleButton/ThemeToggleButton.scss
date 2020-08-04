@@ -2,7 +2,7 @@
 
 $root: '.button--theme-toggle';
 $buttonHeight: 35px;
-$buttonSliderWidth: 110px;
+$buttonSliderWidth: 90px;
 $buttonShrinkSize: 6px;
 
 #{$root} {
@@ -32,6 +32,11 @@ $buttonShrinkSize: 6px;
       left: calc(#{$buttonShrinkSize} / 2);
       background-color: black;
       transition: left $appThemeTransitionTime;
+
+      +span {
+        display: inline-block;
+        padding-left: 20px;
+      }
     }
   
     #{$appDarkTheme} & {
@@ -39,6 +44,11 @@ $buttonShrinkSize: 6px;
       left: calc((#{$buttonSliderWidth} - #{$buttonHeight}) + (#{$buttonShrinkSize} / 2));
       background-color: black;
       transition: left $appThemeTransitionTime;
+
+      +span {
+        display: inline-block;
+        padding-right: 10px;
+      }
     }
   }
 }
