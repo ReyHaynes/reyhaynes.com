@@ -1,0 +1,49 @@
+@import '../../style-mixins.scss';
+
+.social {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  transition: opacity $appThemeTransitionTime;
+
+  &-icon {
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+  }
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &--theme-light {
+    @extend .social;
+    opacity: 0;
+
+    .github { background-image: url('../../assets/light-theme/icons/github.png'); }
+    .instagram { background-image: url('../../assets/light-theme/icons/instagram.png'); }
+    .medium { background-image: url('../../assets/light-theme/icons/medium.png'); }
+    .linkedin { background-image: url('../../assets/light-theme/icons/linkedin.png'); }
+    .twitter { background-image: url('../../assets/light-theme/icons/twitter.png'); }
+    .youtube { background-image: url('../../assets/light-theme/icons/youtube.png'); }
+  }
+
+  &--theme-dark {
+    @extend .social;
+    opacity: 0;
+
+    .github { background-image: url('../../assets/dark-theme/icons/github.png'); }
+    .instagram { background-image: url('../../assets/dark-theme/icons/instagram.png'); }
+    .medium { background-image: url('../../assets/dark-theme/icons/medium.png'); }
+    .linkedin { background-image: url('../../assets/dark-theme/icons/linkedin.png'); }
+    .twitter { background-image: url('../../assets/dark-theme/icons/twitter.png'); }
+    .youtube { background-image: url('../../assets/dark-theme/icons/youtube.png'); }
+  }
+}

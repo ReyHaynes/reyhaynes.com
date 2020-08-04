@@ -1,12 +1,12 @@
 @import "../style-mixins.scss";
 
 $root: $root;
-$sidePadding: 12.5vw;
+$sidePadding: 12.5%;
 
 #{$root} {
   position: relative;
   width: 100vw;
-  max-width: 100vw;
+  max-width: 1300px;
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -15,14 +15,16 @@ $sidePadding: 12.5vw;
 
   &#{$appLightTheme} {
     color: theme-color('light','color');
-    & .background--theme-light {
+    & .background--theme-light,
+    & .social--theme-light {
       opacity: 1;
     }
   }
 
   &#{$appDarkTheme} {
     color: theme-color('dark','color');
-    & .background--theme-dark {
+    & .background--theme-dark,
+    & .social--theme-dark {
       opacity: 1;
     }
   }
