@@ -1,6 +1,7 @@
 {
   "name": "@ReyHaynes",
   "subheading": [
+    "Entrepreneur",
     "Developer"
   ],
   "socials": [
@@ -14,7 +15,7 @@
     {
       "social": "github",
       "target": "https://github.com/ReyHaynes/SwiftUI-Calculator",
-      "info": "Swift UI Calculator Clone"
+      "info": "Code: Creating a Swift UI Calculator Clone"
     },
     {
       "social": "medium",

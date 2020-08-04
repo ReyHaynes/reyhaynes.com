@@ -22,5 +22,14 @@
       font-size: $mainHeaderSize;
       line-height: 0;
     }
+
+    .Typewriter {
+      display: inline-flex;
+      align-items: center;
+
+      &__cursor {
+        font-size: 1.5em;
+      }
+    }
   }
 }

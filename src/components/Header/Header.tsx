@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.scss'
+import Typewriter from 'typewriter-effect'
 
 interface HeaderProps {
   name: string;
@@ -9,7 +10,15 @@ interface HeaderProps {
 const Header = ({ name, subheading }: HeaderProps) => (
   <div className="header">
     <h1>{ name }</h1>
-    <h2>{ subheading[0] }</h2>
+    <h2>
+      <Typewriter
+        options={{
+          strings: subheading,
+          autoStart: true,
+          loop: true
+        }}
+      />
+    </h2>
   </div>
 )
 

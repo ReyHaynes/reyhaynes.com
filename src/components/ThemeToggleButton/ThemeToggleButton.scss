@@ -6,6 +6,7 @@ $buttonSliderWidth: 90px;
 $buttonShrinkSize: 6px;
 
 #{$root} {
+  cursor: pointer;
   position: relative;
   font-size: 0.8rem;
   text-transform: uppercase;
