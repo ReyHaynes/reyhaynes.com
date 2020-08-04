@@ -6,6 +6,9 @@ $root: $root;
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: color $appThemeTransitionTime;
 
   &#{$appLightTheme} {
     color: theme-color('light','color');
@@ -20,30 +23,73 @@ $root: $root;
       opacity: 1;
     }
   }
+}
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: 15%;
-    width: 100vw;
-    min-height: 100vh;
-    transition: opacity $appThemeTransitionTime;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 6.5vw;
+  width: 100vw;
+  min-height: 100vh;
+  transition: opacity $appThemeTransitionTime;
 
-    &--theme-light {
-      @extend .background;
-      background-color: theme-color('light','background-color');
-      background-image: url('../assets/light-bg-selfie.jpg');
-      opacity: 0;
+  &--theme-light {
+    @extend .background;
+    background-color: theme-color('light','background-color');
+    background-image: url('../assets/light-theme/bg-selfie.jpg');
+    opacity: 0;
+  }
+
+  &--theme-dark {
+    @extend .background;
+    background-color: theme-color('dark','background-color');
+    background-image: url('../assets/dark-theme/bg-selfie.jpg');
+    opacity: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 6.5vw 10px 10px;
+  z-index: 1;
+}
+
+.content {
+  width: 50vw;
+  max-width: 450px;
+
+  &-header {
+    $mainHeaderSize: 3.25rem;
+
+    h1 {
+      font-size: $mainHeaderSize;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin: 0;
     }
 
-    &--theme-dark {
-      @extend .background;
-      background-color: theme-color('dark','background-color');
-      background-image: url('../assets/dark-bg-selfie.jpg');
-      opacity: 0;
+    h2 {
+      font-size: 2em;
+      font-weight: 100;
+      text-transform: uppercase;
+      margin: 0;
+
+      &::before {
+        content: "@";
+        opacity: 0;
+        font-size: $mainHeaderSize;
+        line-height: 0;
+      }
     }
   }
 }

@@ -2,14 +2,20 @@ $root: ".app";
 $appDarkTheme: "#{$root}--theme-dark";
 $appLightTheme: "#{$root}--theme-light";
 
-$appThemeTransitionTime: 150ms;
+$appThemeTransitionTime: 500ms;
 
 $theme: (
   'light': (
+    'content-background-color': black,
+    'slider-color': white,
+    'slider-background-color': black,
     'color': black,
     'background-color': white
   ),
   'dark': (
+    'content-background-color': white,
+    'slider-color': black,
+    'slider-background-color': white,
     'color': white,
     'background-color': black
   )
