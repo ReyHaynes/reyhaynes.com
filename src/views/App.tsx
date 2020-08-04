@@ -3,12 +3,19 @@ import './App.scss'
 import { ThemeToggleButton } from '../components'
 
 const App = () => {
-  const [isThemeDark, setIsThemeDark] = useState<boolean>(false)
+  const themeLocalStorage:boolean = localStorage.getItem('DarkMode') === 'true'
 
-  const toggleTheme = () => setIsThemeDark(!isThemeDark)
+  const [isThemeDark, setIsThemeDark] = useState<boolean>(themeLocalStorage)
+
+  const toggleTheme = () => {
+    localStorage.setItem('DarkMode', String(!isThemeDark))
+    setIsThemeDark(!isThemeDark)
+  }
 
   return (
-    <div className={isThemeDark ? 'app app--theme-dark': 'app app--theme-light'}>
+    <div className={'app ' + (isThemeDark ? 'app--theme-dark': 'app--theme-light')}>
+      <div className='app-background--theme-light'></div>
+      <div className='app-background--theme-dark'></div>
       <ThemeToggleButton toggle={toggleTheme} isThemeDark={isThemeDark} />
     </div>
   );

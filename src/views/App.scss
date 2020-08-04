@@ -4,17 +4,46 @@ $root: $root;
 
 #{$root} {
   position: relative;
+  width: 100vw;
   min-height: 100vh;
 
   &#{$appLightTheme} {
-    background-color: theme-color('light','background-color');
     color: theme-color('light','color');
-    transition: background-color $appThemeTransitionTime;
+    & #{$root}-background--theme-light {
+      opacity: 1;
+    }
   }
 
   &#{$appDarkTheme} {
-    background-color: theme-color('dark','background-color');
     color: theme-color('dark','color');
-    transition: background-color $appThemeTransitionTime;
+    & #{$root}-background--theme-dark {
+      opacity: 1;
+    }
+  }
+
+  #{$root}-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 15%;
+    width: 100vw;
+    min-height: 100vh;
+    transition: opacity $appThemeTransitionTime;
+
+    &--theme-light {
+      @extend #{$root}-background;
+      background-color: theme-color('light','background-color');
+      background-image: url('../assets/light-bg-selfie.jpg');
+      opacity: 0;
+    }
+
+    &--theme-dark {
+      @extend #{$root}-background;
+      background-color: theme-color('dark','background-color');
+      background-image: url('../assets/dark-bg-selfie.jpg');
+      opacity: 0;
+    }
   }
 }
