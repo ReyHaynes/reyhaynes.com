@@ -1,17 +1,17 @@
 // @import '../../style-mixins.scss';
 
 .header {
-  $mainHeaderSize: 3.25rem;
-
+  $mainHeaderSize: 3rem;
+  font-size: $mainHeaderSize;
   h1 {
-    font-size: $mainHeaderSize;
+    font-size: 1em;
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 0.5em;
     font-weight: 100;
     text-transform: uppercase;
     margin: 0;

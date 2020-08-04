@@ -2,13 +2,13 @@ import React from 'react'
 import './SocialSharing.scss'
 
 interface SocialSharingProps {
-    socials: Array<SocialProps>;
-    theme: string;
+  socials: Array<SocialProps>;
+  theme: string;
 }
 
 interface SocialProps {
-    social: string;
-    target: string;
+  social: string;
+  target: string;
 }
 
 const SocialSharing = ({ socials, theme } : SocialSharingProps) => (

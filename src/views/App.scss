@@ -1,7 +1,7 @@
 @import "../style-mixins.scss";
 
 $root: $root;
-$sidePadding: 12.5%;
+$sidePadding: 20%;
 
 #{$root} {
   position: relative;
@@ -16,16 +16,28 @@ $sidePadding: 12.5%;
   &#{$appLightTheme} {
     color: theme-color('light','color');
     & .background--theme-light,
-    & .social--theme-light {
+    & .social--theme-light,
+    & .posts--theme-light {
       opacity: 1;
+    }
+
+    & .social--theme-light,
+    & .posts--theme-light {
+      z-index: 1;
     }
   }
 
   &#{$appDarkTheme} {
     color: theme-color('dark','color');
     & .background--theme-dark,
-    & .social--theme-dark {
+    & .social--theme-dark,
+    & .posts--theme-dark {
       opacity: 1;
+    }
+
+    & .social--theme-dark,
+    & .posts--theme-dark {
+      z-index: 1;
     }
   }
 
@@ -38,7 +50,7 @@ $sidePadding: 12.5%;
   &-container {
     display: flex;
     justify-content: flex-end;
-    padding: 10px ($sidePadding / 2) 10px 10px;
+    padding: 10px;
     z-index: 1;
   }
 
@@ -71,7 +83,16 @@ $sidePadding: 12.5%;
     }
   
     &-social {
+      position: relative;
       margin-top: 20px;
+      height: 45px;
+    }
+
+    &-posts {
+      position: relative;
+      margin-top: 20px;
+      width: 450px;
+      max-width: calc(100vw - 20px);
     }
   }
 }

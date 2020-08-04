@@ -1,6 +1,9 @@
 @import '../../style-mixins.scss';
 
-.social {
+$iconSize: 65px;
+$gridMargin: 10px;
+
+.posts {
   position: relative;
   width: 100%;
   opacity: 0;
@@ -8,9 +11,27 @@
 
   &-icon {
     background-size: contain;
-    width: 35px;
-    height: 35px;
-    margin: 5px;
+    width: 65px;
+    height: 65px;
+    margin-right: $gridMargin;
+  }
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-post {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: $gridMargin;
+    opacity: 1;
     transition: opacity $appThemeTransitionTime;
 
     @media (hover: hover) {
@@ -20,19 +41,30 @@
     }
   }
 
-  &-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  &-info {
+    overflow: hidden;
+    max-height: $iconSize - ($gridMargin * 2);
+    padding: $gridMargin ($gridMargin * 2);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    flex: 1;
+    align-items: center;
+    font-size: 1.10rem;
+    line-height: 1.2;
+    border-radius: 0 $iconSize $iconSize 0;
   }
 
   &--theme-light {
-    @extend .social;
+    @extend .posts;
 
+    a { 
+      color: theme-color('light', 'posts-color');
+    }
+
+    & .posts-info {
+      background-color: theme-color('light', 'posts-background-color');
+    }
+    
     .github { background-image: url('../../assets/light-theme/icons/github.png'); }
     .instagram { background-image: url('../../assets/light-theme/icons/instagram.png'); }
     .medium { background-image: url('../../assets/light-theme/icons/medium.png'); }
@@ -41,8 +73,24 @@
     .youtube { background-image: url('../../assets/light-theme/icons/youtube.png'); }
   }
 
+  .post {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
   &--theme-dark {
-    @extend .social;
+    @extend .posts;
+
+    a {
+      color: theme-color('dark', 'posts-color');
+    }
+
+    & .posts-info {
+      background-color: theme-color('dark', 'posts-background-color');
+    }
 
     .github { background-image: url('../../assets/dark-theme/icons/github.png'); }
     .instagram { background-image: url('../../assets/dark-theme/icons/instagram.png'); }

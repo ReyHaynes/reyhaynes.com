@@ -6,14 +6,16 @@ $appThemeTransitionTime: 500ms;
 
 $theme: (
   'light': (
-    'content-background-color': black,
+    'posts-color': white,
+    'posts-background-color': black,
     'slider-color': white,
     'slider-background-color': black,
     'color': black,
     'background-color': white
   ),
   'dark': (
-    'content-background-color': white,
+    'posts-color': black,
+    'posts-background-color': white,
     'slider-color': black,
     'slider-background-color': white,
     'color': white,
