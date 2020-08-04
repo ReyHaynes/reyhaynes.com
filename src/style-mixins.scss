@@ -1,0 +1,21 @@
+$root: ".app";
+$appDarkTheme: "#{$root}--theme-dark";
+$appLightTheme: "#{$root}--theme-light";
+
+$appThemeTransitionTime: 150ms;
+
+$theme: (
+  'light': (
+    'color': black,
+    'background-color': white
+  ),
+  'dark': (
+    'color': white,
+    'background-color': black
+  )
+);
+
+@function theme-color($primary, $key) {
+  $map: map-get($theme, $primary);
+  @return map-get($map, $key);
+}

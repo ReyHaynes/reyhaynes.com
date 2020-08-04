@@ -1,0 +1,44 @@
+@import '../../style-mixins.scss';
+
+$root: '.button--theme-toggle';
+$buttonHeight: 35px;
+$buttonSliderWidth: 110px;
+$buttonShrinkSize: 6px;
+
+#{$root} {
+  position: relative;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  width: $buttonSliderWidth;
+  height: $buttonHeight;
+  border-radius: 20px;
+  border-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  .toggle {
+    position: absolute;
+    border-radius: $buttonHeight;
+    height: calc(#{$buttonHeight} - #{$buttonShrinkSize});
+    width: calc(#{$buttonHeight} - #{$buttonShrinkSize});
+
+    #{$appLightTheme} & {
+      top: calc(#{$buttonShrinkSize} / 2);
+      left: calc(#{$buttonShrinkSize} / 2);
+      background-color: black;
+      transition: left $appThemeTransitionTime;
+    }
+  
+    #{$appDarkTheme} & {
+      top: calc(#{$buttonShrinkSize} / 2);
+      left: calc((#{$buttonSliderWidth} - #{$buttonHeight}) + (#{$buttonShrinkSize} / 2));
+      background-color: black;
+      transition: left $appThemeTransitionTime;
+    }
+  }
+}

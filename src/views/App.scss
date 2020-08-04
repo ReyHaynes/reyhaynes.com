@@ -1,0 +1,20 @@
+@import "../style-mixins.scss";
+
+$root: $root;
+
+#{$root} {
+  position: relative;
+  min-height: 100vh;
+
+  &#{$appLightTheme} {
+    background-color: theme-color('light','background-color');
+    color: theme-color('light','color');
+    transition: background-color $appThemeTransitionTime;
+  }
+
+  &#{$appDarkTheme} {
+    background-color: theme-color('dark','background-color');
+    color: theme-color('dark','color');
+    transition: background-color $appThemeTransitionTime;
+  }
+}
