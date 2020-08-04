@@ -1,12 +1,10 @@
-* {
-  font-family: proxima-nova, sans-serif;
-}
-
 body {
   margin: 0;
+  font-family: proxima-nova, sans-serif;
+  font-size: 15px;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1;
 }
 
 code {
