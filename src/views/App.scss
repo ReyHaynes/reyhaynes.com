@@ -6,7 +6,7 @@ $sidePadding: 12.5%;
 #{$root} {
   position: relative;
   width: 100vw;
-  max-width: 1300px;
+  max-width: 1100px;
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -26,6 +26,52 @@ $sidePadding: 12.5%;
     & .background--theme-dark,
     & .social--theme-dark {
       opacity: 1;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px ($sidePadding / 2) 10px 10px;
+    z-index: 1;
+  }
+
+  &-content {
+    max-width: 450px;
+  
+    &-header {
+      $mainHeaderSize: 3.25rem;
+  
+      h1 {
+        font-size: $mainHeaderSize;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin: 0;
+      }
+  
+      h2 {
+        font-size: 2rem;
+        font-weight: 100;
+        text-transform: uppercase;
+        margin: 0;
+  
+        &::before {
+          content: "@";
+          opacity: 0;
+          font-size: $mainHeaderSize;
+          line-height: 0;
+        }
+      }
+    }
+  
+    &-social {
+      margin-top: 20px;
     }
   }
 }
@@ -53,47 +99,5 @@ $sidePadding: 12.5%;
     background-color: theme-color('dark','background-color');
     background-image: url('../assets/dark-theme/bg-selfie.jpg');
     opacity: 0;
-  }
-}
-
-.menu {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-}
-
-.container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px $sidePadding 10px 10px;
-  z-index: 1;
-}
-
-.content {
-  max-width: 450px;
-
-  &-header {
-    $mainHeaderSize: 3.25rem;
-
-    h1 {
-      font-size: $mainHeaderSize;
-      font-weight: 300;
-      text-transform: uppercase;
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 100;
-      text-transform: uppercase;
-      margin: 0;
-
-      &::before {
-        content: "@";
-        opacity: 0;
-        font-size: $mainHeaderSize;
-        line-height: 0;
-      }
-    }
   }
 }

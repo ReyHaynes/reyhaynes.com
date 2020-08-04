@@ -1,13 +1,25 @@
 {
-    "name": "@ReyHaynes",
-    "subheading": [
-        "Developer"
-    ],
-    "socials": [
-        { "social": "github", "target": "https://github.com/ReyHaynes" },
-        { "social": "instagram", "target": "https://instagram.com/ReyHaynes" },
-        { "social": "medium", "target": "https://medium.com/@reyhaynes" },
-        { "social": "linkedin", "target": "https://www.linkedin.com/in/reyhaynes/" },
-        { "social": "twitter", "target": "https://twitter.com/ReyHaynes" }
-    ]
+  "name": "@ReyHaynes",
+  "subheading": [
+    "Developer"
+  ],
+  "socials": [
+    { "social": "github", "target": "https://github.com/ReyHaynes" },
+    { "social": "instagram", "target": "https://instagram.com/ReyHaynes" },
+    { "social": "medium", "target": "https://medium.com/@reyhaynes" },
+    { "social": "linkedin", "target": "https://www.linkedin.com/in/reyhaynes/" },
+    { "social": "twitter", "target": "https://twitter.com/ReyHaynes" }
+  ],
+  "data": [
+    {
+      "social": "github",
+      "target": "https://github.com/ReyHaynes/SwiftUI-Calculator",
+      "info": "Swift UI Calculator Clone"
+    },
+    {
+      "social": "medium",
+      "target": "https://medium.com/@reyhaynes/how-to-start-writing-or-write-often-on-medium-com-c9ab3bd83cc2?source=---------2------------------",
+      "info": "How to “Start Writing” or “Write Often” on Medium.com"
+    }
+  ]
 }

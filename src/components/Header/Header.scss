@@ -1,0 +1,26 @@
+// @import '../../style-mixins.scss';
+
+.header {
+  $mainHeaderSize: 3.25rem;
+
+  h1 {
+    font-size: $mainHeaderSize;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 0;
+
+    &::before {
+      content: "@";
+      opacity: 0;
+      font-size: $mainHeaderSize;
+      line-height: 0;
+    }
+  }
+}
