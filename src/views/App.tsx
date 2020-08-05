@@ -15,8 +15,18 @@ const App = () => {
 
   return (
     <div className={'app ' + (isThemeDark ? 'app--theme-dark': 'app--theme-light')}>
-      <div className='background--theme-light'></div>
-      <div className='background--theme-dark'></div>
+      <div className="app-background">
+        <div className="background--theme-light">
+          <div className='background-container'>
+            <div className="background-image"></div>
+          </div>
+        </div>
+        <div className="background--theme-dark">
+          <div className='background-container'>
+            <div className="background-image"></div>
+          </div>
+        </div>
+      </div>
       <div className="app-menu">
         <ThemeToggleButton toggle={ toggleTheme } isThemeDark={ isThemeDark } />
       </div>
@@ -28,6 +38,16 @@ const App = () => {
           <div className="app-content-social">
             <SocialSharing theme="light" socials={ content.socials as [] } />
             <SocialSharing theme="dark" socials={ content.socials as [] } />
+          </div>
+          <div className="app-background-mobile">
+            <div className='background--theme-light'>
+              <div className="background-takeover"></div>
+              <div className="background-image"></div>
+            </div>
+            <div className='background--theme-dark'>
+              <div className="background-takeover"></div>
+              <div className="background-image"></div>
+            </div>
           </div>
           <div className="app-content-posts">
             <Posts theme="light" posts={ content.posts as [] } />

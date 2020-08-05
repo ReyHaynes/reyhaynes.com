@@ -17,10 +17,6 @@ $gridMargin: 10px;
   }
 
   &-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,6 +79,10 @@ $gridMargin: 10px;
 
   &--theme-dark {
     @extend .posts;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     a {
       color: theme-color('dark', 'posts-color');

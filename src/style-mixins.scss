@@ -1,6 +1,8 @@
 $root: ".app";
 $appDarkTheme: "#{$root}--theme-dark";
 $appLightTheme: "#{$root}--theme-light";
+$breakpoint: 775px;
+$landscapeBreakpoint: 900px;
 
 $appThemeTransitionTime: 500ms;
 

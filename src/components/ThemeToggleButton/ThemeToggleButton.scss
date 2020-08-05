@@ -18,6 +18,7 @@ $buttonShrinkSize: 6px;
   align-items: center;
   justify-content: center;
   transition: background-color $appThemeTransitionTime;
+  z-index: 5;
 
   &:focus {
     outline: none;

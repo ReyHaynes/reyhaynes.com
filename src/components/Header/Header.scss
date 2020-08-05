@@ -1,8 +1,16 @@
-// @import '../../style-mixins.scss';
+@import '../../style-mixins.scss';
 
 .header {
   $mainHeaderSize: 3rem;
   font-size: $mainHeaderSize;
+
+  @media (max-width: $breakpoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1 {
     font-size: 1em;
     font-weight: 300;
@@ -21,6 +29,10 @@
       opacity: 0;
       font-size: $mainHeaderSize;
       line-height: 0;
+
+      @media (max-width: $breakpoint) {
+        display: none;
+      }
     }
 
     .Typewriter {
