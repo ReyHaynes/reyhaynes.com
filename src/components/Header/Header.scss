@@ -4,7 +4,7 @@
   $mainHeaderSize: 3rem;
   font-size: $mainHeaderSize;
 
-  @media (orientation: portrait), (max-width: $breakpoint) {
+  @media (orientation: portrait), (max-width: $appBreakpoint) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@
       font-size: $mainHeaderSize;
       line-height: 0;
 
-      @media (orientation: portrait), (max-width: $breakpoint) {
+      @media (orientation: portrait), (max-width: $appBreakpoint) {
         display: none;
       }
     }

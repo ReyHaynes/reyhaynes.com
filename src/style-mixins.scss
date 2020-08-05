@@ -1,9 +1,10 @@
 $root: ".app";
 $appDarkTheme: "#{$root}--theme-dark";
 $appLightTheme: "#{$root}--theme-light";
-$breakpoint: 775px;
-$landscapeBreakpoint: 1100px;
 
+$appBreakpoint: 775px;
+$appContainer: 1100px;
+$appContainerPadding: 10px;
 $appThemeTransitionTime: 500ms;
 
 $theme: (
@@ -28,4 +29,25 @@ $theme: (
 @function theme-color($primary, $key) {
   $map: map-get($theme, $primary);
   @return map-get($map, $key);
+}
+
+@function vh($quantity) {
+  @return calc(var(--vh, 1vh) * #{$quantity});
+}
+
+%app-container {
+  $padding: $appContainerPadding;
+
+  position: relative;
+  max-width: $appContainer;
+  box-sizing: border-box;
+  padding: 55px $padding $padding $padding;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @supports(padding: unquote('max(0px)')) {
+    padding-left: unquote('max(#{$padding}, env(safe-area-inset-left))');
+    padding-right: unquote('max(#{$padding}, env(safe-area-inset-right))');
+  }
 }

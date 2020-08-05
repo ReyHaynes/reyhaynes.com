@@ -1,11 +1,13 @@
 @import '../../style-mixins.scss';
 
-$root: '.button--theme-toggle';
 $buttonHeight: 35px;
 $buttonSliderWidth: 90px;
 $buttonShrinkSize: 6px;
 
-#{$root} {
+.theme-toggle {
+  $themeLightState: ".theme-toggle--state-light";
+  $themeDarkState: ".theme-toggle--state-dark";
+
   cursor: pointer;
   position: relative;
   font-size: 0.8rem;
@@ -24,43 +26,45 @@ $buttonShrinkSize: 6px;
     outline: none;
   }
 
-  #{$appLightTheme} & {
+  &--state-light {
+    color: theme-color('light','slider-color');
     background-color: theme-color('light','slider-background-color');
   }
 
-  #{$appDarkTheme} & {
+  &--state-dark {
+    color: theme-color('dark','slider-color');
     background-color: theme-color('dark','slider-background-color');
   }
 
-  .toggle {
+  &-button {
     position: absolute;
     border-radius: $buttonHeight;
     height: calc(#{$buttonHeight} - #{$buttonShrinkSize});
     width: calc(#{$buttonHeight} - #{$buttonShrinkSize});
     transition: left $appThemeTransitionTime, background-color $appThemeTransitionTime;
 
-    #{$appLightTheme} & {
+    #{$themeLightState} & {
       top: calc(#{$buttonShrinkSize} / 2);
       left: calc(#{$buttonShrinkSize} / 2);
       background-color: theme-color('light','background-color');
-
-      +span {
-        color: theme-color('light','slider-color');
-        display: inline-block;
-        padding-left: 10px;
-      }
     }
-  
-    #{$appDarkTheme} & {
+
+    #{$themeDarkState} & {
       top: calc(#{$buttonShrinkSize} / 2);
       left: calc((#{$buttonSliderWidth} - #{$buttonHeight}) + (#{$buttonShrinkSize} / 2));
       background-color: theme-color('dark','background-color');
-
-      +span {
-        color: theme-color('dark','slider-color');
-        display: inline-block;
-        padding-right: 20px;
-      }
     }
+  }
+
+  &-text {
+    display: inline-block;
+
+    #{$themeLightState} & {
+      padding-left: 10px;
+    }
+
+    #{$themeDarkState} & {
+      padding-right: 20px;
+    }    
   }
 }
