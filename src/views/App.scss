@@ -99,7 +99,7 @@ $sidePadding: 20%;
       margin: 0 10px;
       position: relative;
 
-      @media (max-width: $landscapeBreakpoint) and (orientation: landscape) {
+      @media (orientation: landscape) {
         max-width: calc(1100px - 90px);
         margin: 0 45px;
       }
@@ -113,7 +113,7 @@ $sidePadding: 20%;
       opacity: 1;
       transition: opacity $appThemeTransitionTime;
 
-      @media (max-width: $breakpoint) {
+      @media (orientation: portrait), (max-width: $breakpoint) {
         opacity: 0;
       }
     }
@@ -189,7 +189,7 @@ $sidePadding: 20%;
         }
       }
 
-      @media (max-width: $breakpoint) {
+      @media (orientation: portrait), (max-width: $breakpoint) {
         height: $mobileBackgroundHeight;
         margin-bottom: $mobileBackgroundHeight * -0.2;
         margin-top: 20px;
@@ -203,7 +203,7 @@ $sidePadding: 20%;
     justify-content: flex-end;
     padding: 10px;
 
-    @media (max-width: $landscapeBreakpoint) and (orientation: landscape) {
+    @media (orientation: landscape) {
       padding: 10px 45px;
     }
   }
@@ -214,11 +214,11 @@ $sidePadding: 20%;
     padding: 10px;
     z-index: 1;
 
-    @media (max-width: $breakpoint) {
+    @media (orientation: portrait), (max-width: $breakpoint) {
       justify-content: center;
     }
 
-    @media (max-width: $landscapeBreakpoint) and (orientation: landscape) {
+    @media (orientation: landscape) {
       padding: 10px 45px;
     }
   }
@@ -258,7 +258,7 @@ $sidePadding: 20%;
       height: 45px;
       transition: margin-top $appThemeTransitionTime;
 
-      @media (max-width: $breakpoint) {
+      @media (orientation: portrait), (max-width: $breakpoint) {
         margin-top: 10px;
       }
     }
