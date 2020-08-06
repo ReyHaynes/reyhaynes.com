@@ -2,6 +2,7 @@ import React from 'react'
 import './Theme.scss'
 import { Header, Posts, SocialSharing } from '../../components'
 import content from '../../assets/content.json'
+import { ga } from 'react-ga'
 
 interface ThemeProps {
   theme: string;
@@ -31,11 +32,13 @@ const Theme = ({ theme } : ThemeProps) => (
         <div className="theme-content-footer">
           <div className="theme-content-footer-info">
             <a href="https://github.com/ReyHaynes/reyhaynes.com"
+              onClick={() => { ga('send', 'event', 'Footer', 'click', 'Github') }}
               // eslint-disable-next-line
               target="_blank" rel="noopener">One Page Theme Switcher</a> by&nbsp;
             <a href="https://reyhaynes.com"
-              // eslint-disable-next-line
-              target="_blank" rel="noopener">@REYHAYNES</a>
+              onClick={() => { ga('send', 'event', 'Footer', 'click', 'Creator') }}>
+              @REYHAYNES
+            </a>
           </div>
         </div>
       </div>
