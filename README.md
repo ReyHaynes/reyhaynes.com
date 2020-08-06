@@ -9,9 +9,9 @@ Personal website created with theme switcher just for fun. Inspired by the popul
 - HTML (...obviously)
 - CSS (...can be magical)
 
-<img src="https://github.com/ReyHaynes/reyhaynes.com/blob/master/screenshots/theme-light.png" height="451" width="600">
+<img src="https://github.com/ReyHaynes/reyhaynes.com/blob/master/screenshots/theme-light.jpg" height="451" width="600">
 
-<img src="https://github.com/ReyHaynes/reyhaynes.com/blob/master/screenshots/theme-light.png" height="451" width="600">
+<img src="https://github.com/ReyHaynes/reyhaynes.com/blob/master/screenshots/theme-dark.jpg" height="451" width="600">
 
 ### Todo
 - [ ] Unit Tests
