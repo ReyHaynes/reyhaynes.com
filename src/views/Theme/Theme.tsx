@@ -28,6 +28,16 @@ const Theme = ({ theme } : ThemeProps) => (
         <div className="theme-content-posts">
           <Posts theme={ theme } posts={ content.posts as [] } />
         </div>
+        <div className="theme-content-footer">
+          <div className="theme-content-footer-info">
+            <a href="https://github.com/reyhaynes"
+              // eslint-disable-next-line
+              target="_blank" rel="noopener">One Page Theme Switcher</a> by&nbsp;
+            <a href="https://reyhaynes.com"
+              // eslint-disable-next-line
+              target="_blank" rel="noopener">@REYHAYNES</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

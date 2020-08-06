@@ -5,6 +5,7 @@
   font-size: $mainHeaderSize;
 
   @media (orientation: portrait), (max-width: $appBreakpoint) {
+    font-size: $mainHeaderSize * .83;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,14 +14,14 @@
 
   h1 {
     font-size: 1em;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     margin: 0;
   }
 
   h2 {
     font-size: 0.5em;
-    font-weight: 100;
+    font-weight: 300;
     text-transform: uppercase;
     margin: 0;
 
