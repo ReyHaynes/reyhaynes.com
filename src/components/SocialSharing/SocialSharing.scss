@@ -3,15 +3,12 @@
 .social {
   position: relative;
   width: 100%;
-  opacity: 0;
-  transition: opacity $appThemeTransitionTime;
 
   &-icon {
     background-size: contain;
     width: 35px;
     height: 35px;
     margin: 5px;
-    transition: opacity $appThemeTransitionTime;
 
     @media (hover: hover) {
       &:hover {

@@ -6,8 +6,6 @@ $gridMargin: 10px;
 .posts {
   position: relative;
   width: 100%;
-  opacity: 0;
-  transition: opacity $appThemeTransitionTime;
 
   &-icon {
     background-size: contain;
@@ -79,10 +77,6 @@ $gridMargin: 10px;
 
   &--theme-dark {
     @extend .posts;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
 
     a {
       color: theme-color('dark', 'posts-color');
