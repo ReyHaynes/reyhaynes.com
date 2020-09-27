@@ -12,21 +12,5 @@
     { "social": "linkedin", "target": "https://www.linkedin.com/in/reyhaynes/" },
     { "social": "twitter", "target": "https://twitter.com/ReyHaynes" }
   ],
-  "posts": [
-    {
-      "social": "github",
-      "target": "https://github.com/ReyHaynes/reyhaynes.com",
-      "info": "Code: Creating this One Page Website. Linktree inspired."
-    },
-    {
-      "social": "github",
-      "target": "https://github.com/ReyHaynes/SwiftUI-Calculator",
-      "info": "Code: Creating a Swift UI Calculator Clone"
-    },
-    {
-      "social": "medium",
-      "target": "https://medium.com/@reyhaynes/how-to-start-writing-or-write-often-on-medium-com-c9ab3bd83cc2?source=---------2------------------",
-      "info": "How to “Start Writing” or “Write Often” on Medium.com"
-    }
-  ]
+  "posts": [{}]
 }

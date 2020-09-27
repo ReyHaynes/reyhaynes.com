@@ -1,14 +1,21 @@
 import React from 'react'
 import './Theme.scss'
 import { Header, Posts, SocialSharing } from '../../components'
-import content from '../../assets/content.json'
 import { ga } from 'react-ga'
 
 interface ThemeProps {
   theme: string;
+  content: Content;
 }
 
-const Theme = ({ theme } : ThemeProps) => (
+interface Content {
+  name: string;
+  subheading: Array<string>;
+  socials: Array<object>;
+  posts: Array<object>;
+}
+
+const Theme = ({ theme, content } : ThemeProps) => (
   <div className={`theme--${ theme }`}>
     <div className="theme-background">
       <div className="theme-container">
