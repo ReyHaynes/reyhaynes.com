@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_measurementId
 }
 
-export class Firebase {
+class Firebase {
 
   db: firebase.firestore.Firestore
   analytics: firebase.analytics.Analytics
@@ -32,4 +32,10 @@ export class Firebase {
     }
   }
 }
+
+const FirebaseInstance = new Firebase()
+
+export const FirebaseDB = FirebaseInstance.db
+export const FirebaseAnalytics = FirebaseInstance.analytics
+
 

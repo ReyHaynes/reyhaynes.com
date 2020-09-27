@@ -1,7 +1,7 @@
 import React from 'react'
 import './Theme.scss'
 import { Header, Posts, SocialSharing } from '../../components'
-import { ga } from 'react-ga'
+import { FirebaseAnalytics as analytics } from '../../firebase'
 
 interface ThemeProps {
   theme: string;
@@ -39,11 +39,19 @@ const Theme = ({ theme, content } : ThemeProps) => (
         <div className="theme-content-footer">
           <div className="theme-content-footer-info">
             <a href="https://github.com/ReyHaynes/reyhaynes.com"
-              onClick={() => { ga('send', 'event', 'Footer', 'click', 'Github') }}
+              onClick={() => { 
+                analytics.logEvent('footerLink_click', {
+                  value: 'Github'
+                })
+              }}
               // eslint-disable-next-line
               target="_blank" rel="noopener">One Page Theme Switcher</a> by&nbsp;
             <a href="https://reyhaynes.com"
-              onClick={() => { ga('send', 'event', 'Footer', 'click', 'Creator') }}>
+              onClick={() => { 
+                analytics.logEvent('footerLink_click', {
+                  value: 'Username'
+                })
+              }}>
               @REYHAYNES
             </a>
           </div>

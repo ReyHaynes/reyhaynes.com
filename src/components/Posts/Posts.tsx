@@ -1,6 +1,6 @@
 import React from 'react'
 import './Posts.scss'
-import { ga } from 'react-ga'
+import { FirebaseAnalytics as analytics } from '../../firebase'
 
 interface PostsProps {
   posts: Array<PostProps>;
@@ -19,11 +19,21 @@ const Posts = ({ posts, theme } : PostsProps) => (
       { posts.map(({ social, target, info }, index) =>
         <div className="posts-post" key={index}>
           <a href={target} className={'posts-icon ' + social}
-            onClick={() => { ga('send', 'event', 'Posts', 'click', target) }}
+            onClick={() => { 
+              analytics.logEvent('post_click', {
+                value: target
+              })
+              // ga('send', 'event', 'Posts', 'click', target)
+            }}
             // eslint-disable-next-line
             target="_blank" rel="noopener"> </a>
           <a href={target} className="posts-info"
-            onClick={() => { ga('send', 'event', 'Posts', 'click', target) }}
+            onClick={() => { 
+              analytics.logEvent('post_click', {
+                value: target
+              })
+              // ga('send', 'event', 'Posts', 'click', target) 
+            }}
             // eslint-disable-next-line
             target="_blank" rel="noopener">
             <div className="post">{ info }</div>

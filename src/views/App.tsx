@@ -3,10 +3,7 @@ import './App.scss'
 import staticContent from '../assets/content.json'
 import { ThemeToggleButton } from '../components'
 import Theme from './Theme/Theme'
-import { Firebase } from '../firebase'
-
-const firebase = new Firebase()
-const db = firebase.db
+import { FirebaseDB as db } from '../firebase'
 
 const App = () => {
   const themeLocalStorage:boolean = localStorage.getItem('DarkMode') === 'true'
