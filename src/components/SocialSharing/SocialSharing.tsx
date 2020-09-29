@@ -20,7 +20,7 @@ const SocialSharing = ({ socials, theme } : SocialSharingProps) => (
         <a href={target} key={index} className={'social-icon ' + social}
           onClick={() => { 
             analytics.logEvent('social_click', {
-              value: social
+              social_target: social
             })
           }} 
           // eslint-disable-next-line

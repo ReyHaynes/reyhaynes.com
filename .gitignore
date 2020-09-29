@@ -20,6 +20,7 @@
 .env.production.local
 
 /.firestore
+/.firebase
 
 npm-debug.log*
 yarn-debug.log*

@@ -21,7 +21,8 @@ const Posts = ({ posts, theme } : PostsProps) => (
           <a href={target} className={'posts-icon ' + social}
             onClick={() => { 
               analytics.logEvent('post_click', {
-                value: target
+                post_target: target,
+                post_title: info
               })
               // ga('send', 'event', 'Posts', 'click', target)
             }}
@@ -30,7 +31,8 @@ const Posts = ({ posts, theme } : PostsProps) => (
           <a href={target} className="posts-info"
             onClick={() => { 
               analytics.logEvent('post_click', {
-                value: target
+                post_target: target,
+                post_title: info
               })
               // ga('send', 'event', 'Posts', 'click', target) 
             }}
