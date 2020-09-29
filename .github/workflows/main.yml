@@ -7,8 +7,6 @@ name: CI (Firebase)
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,6 +24,7 @@ jobs:
         run: |
           npm install
           npm run build
+          npm run firebase:build:functions
       - name: Firebase Deploy
         run: |
           sudo npm install -g firebase-tools
