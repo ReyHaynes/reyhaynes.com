@@ -19,8 +19,9 @@ const SocialSharing = ({ socials, theme } : SocialSharingProps) => (
       { socials.map(({ social, target }, index) =>
         <a href={target} key={index} className={'social-icon ' + social}
           onClick={() => { 
-            analytics.logEvent('social_click', {
-              social_target: social
+            analytics.logEvent('select_content', {
+              content_type: 'social',
+              item_id: social
             })
           }} 
           // eslint-disable-next-line

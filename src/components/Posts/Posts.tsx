@@ -20,9 +20,10 @@ const Posts = ({ posts, theme } : PostsProps) => (
         <div className="posts-post" key={index}>
           <a href={target} className={'posts-icon ' + social}
             onClick={() => { 
-              analytics.logEvent('post_click', {
-                post_target: target,
-                post_title: info
+              analytics.logEvent('select_content', {
+                content_type: 'post',
+                item_id: target,
+                item_name: info
               })
               // ga('send', 'event', 'Posts', 'click', target)
             }}
@@ -30,9 +31,10 @@ const Posts = ({ posts, theme } : PostsProps) => (
             target="_blank" rel="noopener"> </a>
           <a href={target} className="posts-info"
             onClick={() => { 
-              analytics.logEvent('post_click', {
-                post_target: target,
-                post_title: info
+              analytics.logEvent('select_content', {
+                content_type: 'post',
+                item_id: target,
+                item_name: info
               })
               // ga('send', 'event', 'Posts', 'click', target) 
             }}

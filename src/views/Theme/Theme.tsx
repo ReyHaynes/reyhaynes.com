@@ -40,16 +40,18 @@ const Theme = ({ theme, content } : ThemeProps) => (
           <div className="theme-content-footer-info">
             <a href="https://github.com/ReyHaynes/reyhaynes.com"
               onClick={() => { 
-                analytics.logEvent('footerLink_click', {
-                  value: 'Github'
+                analytics.logEvent('select_content', {
+                  content_type: 'footer',
+                  item_id: 'Github'
                 })
               }}
               // eslint-disable-next-line
               target="_blank" rel="noopener">One Page Theme Switcher</a> by&nbsp;
             <a href="https://reyhaynes.com"
               onClick={() => { 
-                analytics.logEvent('footerLink_click', {
-                  value: 'Username'
+                analytics.logEvent('select_content', {
+                  content_type: 'footer',
+                  item_id: 'Username'
                 })
               }}>
               @REYHAYNES
