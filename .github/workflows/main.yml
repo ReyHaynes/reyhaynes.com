@@ -9,6 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_URL=https://reyhaynes.com
+      REACT_APP_FIREBASE_apiKey=${{ secrets.REACT_APP_FIREBASE_APIKEY }}
+      REACT_APP_FIREBASE_authDomain=com-reyhaynes.firebaseapp.com
+      REACT_APP_FIREBASE_databaseURL=https://com-reyhaynes.firebaseio.com
+      REACT_APP_FIREBASE_projectId=com-reyhaynes
+      REACT_APP_FIREBASE_storageBucket=com-reyhaynes.appspot.com
+      REACT_APP_FIREBASE_messagingSenderId=85822889095
+      REACT_APP_FIREBASE_appId=1:85822889095:web:0ce0d0825efd16a4782c22
+      REACT_APP_FIREBASE_measurementId=G-1CNRL2YDMY
 
     steps:
       - uses: actions/checkout@v2
