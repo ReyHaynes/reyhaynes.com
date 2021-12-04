@@ -28,7 +28,7 @@ const Posts = ({ posts, theme } : PostsProps) => (
               // ga('send', 'event', 'Posts', 'click', target)
             }}
             // eslint-disable-next-line
-            target="_blank" rel="noopener"> </a>
+            target="_blank" rel="noopener noreferrer"> </a>
           <a href={target} className="posts-info"
             onClick={() => { 
               analytics.logEvent('select_content', {
@@ -39,7 +39,7 @@ const Posts = ({ posts, theme } : PostsProps) => (
               // ga('send', 'event', 'Posts', 'click', target) 
             }}
             // eslint-disable-next-line
-            target="_blank" rel="noopener">
+            target="_blank" rel="noopener noreferrer">
             <div className="post">{ info }</div>
           </a>
         </div>

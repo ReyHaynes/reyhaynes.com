@@ -25,7 +25,7 @@ const SocialSharing = ({ socials, theme } : SocialSharingProps) => (
             })
           }} 
           // eslint-disable-next-line
-          target="_blank" rel="noopener"> </a>
+          target="_blank" rel="noopener noreferrer"> </a>
       )}
     </div>
   </div>

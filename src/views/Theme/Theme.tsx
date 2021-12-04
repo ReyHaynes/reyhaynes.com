@@ -46,7 +46,7 @@ const Theme = ({ theme, content } : ThemeProps) => (
                 })
               }}
               // eslint-disable-next-line
-              target="_blank" rel="noopener">One Page Theme Switcher</a> by&nbsp;
+              target="_blank" rel="noopener noreferrer">One Page Theme Switcher</a> by&nbsp;
             <a href="https://reyhaynes.com"
               onClick={() => { 
                 analytics.logEvent('select_content', {
