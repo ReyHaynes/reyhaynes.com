@@ -9,7 +9,7 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "12"
+    "node": "17"
   },
   "main": "index.js",
   "dependencies": {
@@ -19,5 +19,13 @@
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "**/**/lodash": ">=4.17.21",
+    "**/**/node-forge": ">=0.10.0",
+    "**/**/date-and-time": ">=0.14.2",
+    "**/**/json-bigint": ">=1.0.0",
+    "**/**/@grpc/grpc-js": ">=1.1.8",
+    "**/**/@firebase/util": ">=0.3.4"
+  }
 }
