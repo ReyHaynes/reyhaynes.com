@@ -46,5 +46,12 @@
   "devDependencies": {
     "@types/node-sass": "^4.11.2",
     "node-sass": "^6.0.1"
+  },
+  "resolutions": {
+    "**/**/browserslist": "^4.16.5",
+    "**/**/lodash": ">=4.17.21",
+    "**/**/node-forge": ">=0.10.0",
+    "**/**/date-and-time": ">=0.14.2",
+    "**/**/immer": "^9.0.6"
   }
 }
