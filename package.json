@@ -48,10 +48,13 @@
     "node-sass": "^6.0.1"
   },
   "resolutions": {
+    "**/**/immer": "^9.0.6",
     "**/**/browserslist": "^4.16.5",
-    "**/**/lodash": ">=4.17.21",
-    "**/**/node-forge": ">=0.10.0",
-    "**/**/date-and-time": ">=0.14.2",
-    "**/**/immer": "^9.0.6"
+    "**/**/lodash": "^4.17.21",
+    "**/**/node-forge": "^0.10.0",
+    "**/**/date-and-time": "^0.14.2",
+    "**/**/json-bigint": "^1.0.0",
+    "**/**/@grpc/grpc-js": "^1.1.8",
+    "**/**/glob-parent": "^5.1.2"
   }
 }
