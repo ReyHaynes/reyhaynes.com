@@ -1,8 +1,6 @@
-import React from 'react'
-import './SocialSharing.scss'
-import { FirebaseAnalytics as analytics } from '../../firebase'
-
-
+import React from "react";
+import { FirebaseInstance as firebase } from "../../firebase";
+import "./SocialSharing.scss";
 interface SocialSharingProps {
   socials: Array<SocialProps>;
   theme: string;
@@ -13,22 +11,29 @@ interface SocialProps {
   target: string;
 }
 
-const SocialSharing = ({ socials, theme } : SocialSharingProps) => (
+const SocialSharing = ({ socials, theme }: SocialSharingProps) => (
   <div className={`social--theme-${theme}`}>
     <div className="social-container">
-      { socials.map(({ social, target }, index) =>
-        <a href={target} key={index} className={'social-icon ' + social}
-          onClick={() => { 
-            analytics.logEvent('select_content', {
-              content_type: 'social',
-              item_id: social
-            })
-          }} 
+      {socials.map(({ social, target }, index) => (
+        <a
+          href={target}
+          key={index}
+          className={"social-icon " + social}
+          onClick={() => {
+            firebase.logEvent("select_content", {
+              content_type: "social",
+              item_id: social,
+            });
+          }}
           // eslint-disable-next-line
-          target="_blank" rel="noopener noreferrer"> </a>
-      )}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+        </a>
+      ))}
     </div>
   </div>
-)
+);
 
-export default SocialSharing
+export default SocialSharing;

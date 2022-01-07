@@ -1,6 +1,6 @@
-import * as firebase from 'firebase/app'
-import "firebase/analytics";
-import "firebase/firestore";
+import { Analytics, getAnalytics, logEvent } from 'firebase/analytics';
+import { FirebaseApp, initializeApp } from 'firebase/app';
+import { doc, Firestore, getDoc, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_apiKey,
@@ -15,27 +15,36 @@ const firebaseConfig = {
 
 class Firebase {
 
-  db: firebase.firestore.Firestore
-  analytics: firebase.analytics.Analytics
+  app: FirebaseApp
+  db: Firestore
+  analytics: Analytics
 
   constructor() {
-    firebase.initializeApp(firebaseConfig)
+    this.app = initializeApp(firebaseConfig)
+    this.db = getFirestore(this.app)
+    this.analytics = getAnalytics(this.app)
 
-    this.db = firebase.firestore()
-    this.analytics = firebase.analytics()
+    // if (window.location.hostname === "localhost") {
+    //   this.db.settings({
+    //     host: "localhost:8080",
+    //     ssl: false
+    //   });
+    // }
+  }
 
-    if (window.location.hostname === "localhost") {
-      this.db.settings({
-        host: "localhost:8080",
-        ssl: false
-      });
-    }
+  async getDocSnapshot(collection: string, document: string) {
+    return await getDoc(doc(this.db, collection, document))
+  }
+
+  logEvent(key: string, data?: object) {
+    logEvent(this.analytics, key, data)
   }
 }
 
 const FirebaseInstance = new Firebase()
 
-export const FirebaseDB = FirebaseInstance.db
-export const FirebaseAnalytics = FirebaseInstance.analytics
+export {
+  FirebaseInstance
+};
 
 
