@@ -1,6 +1,7 @@
 import { Analytics, getAnalytics, logEvent } from 'firebase/analytics';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { doc, Firestore, getDoc, getFirestore } from 'firebase/firestore';
+import { FirebasePerformance, getPerformance } from 'firebase/performance';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_apiKey,
@@ -18,18 +19,15 @@ class Firebase {
   app: FirebaseApp
   db: Firestore
   analytics: Analytics
+  performance: FirebasePerformance
 
   constructor() {
     this.app = initializeApp(firebaseConfig)
     this.db = getFirestore(this.app)
     this.analytics = getAnalytics(this.app)
+    this.performance = getPerformance(this.app)
 
-    // if (window.location.hostname === "localhost") {
-    //   this.db.settings({
-    //     host: "localhost:8080",
-    //     ssl: false
-    //   });
-    // }
+    // connectFirestoreEmulator(this.db, 'localhost', 8080);
   }
 
   async getDocSnapshot(collection: string, document: string) {
