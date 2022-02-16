@@ -22,7 +22,8 @@ const SocialSharing = ({ socials, theme }: SocialSharingProps) => (
           onClick={() => {
             firebase.logEvent("select_content", {
               content_type: "social",
-              item_id: social,
+              item_id: target,
+              item_name: "Social -> " + social,
             });
           }}
           // eslint-disable-next-line

@@ -26,7 +26,6 @@ const Posts = ({ posts, theme }: PostsProps) => (
                 item_id: target,
                 item_name: info,
               });
-              // ga('send', 'event', 'Posts', 'click', target)
             }}
             // eslint-disable-next-line
             target="_blank"

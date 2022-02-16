@@ -5,23 +5,29 @@ import { FirebaseInstance as firebase } from "../firebase";
 import "./App.scss";
 import Theme from "./Theme/Theme";
 
+interface Posts {
+  social: string;
+  target: string;
+  info: string;
+}
+
 const App = () => {
-  const themeLocalStorage: boolean =
-    localStorage.getItem("DarkMode") === "true";
-
-  const [isThemeDark, setIsThemeDark] = useState<boolean>(themeLocalStorage);
-  const [content, setContent] = useState(staticContent);
-
   const toggleTheme = () => {
-    localStorage.setItem("DarkMode", String(!isThemeDark));
+    localStorage.setItem("app.DarkMode", String(!isThemeDark));
+    localStorage.setItem("app.ThemeReset", String(Date.now() + 1000 * 60 * 60 * 4));
     setIsThemeDark(!isThemeDark);
   };
 
-  interface Posts {
-    social: string;
-    target: string;
-    info: string;
+  if (Date.now() > Number(localStorage.getItem("app.ThemeReset"))) {
+    localStorage.setItem("app.DarkMode", String(window.matchMedia("(prefers-color-scheme: dark)").matches));
+    localStorage.removeItem("app.ThemeReset");
   }
+
+  const themeLocalStorage: boolean =
+    localStorage.getItem("app.DarkMode") === "true";
+
+  const [isThemeDark, setIsThemeDark] = useState<boolean>(themeLocalStorage);
+  const [content, setContent] = useState(staticContent);
 
   useEffect(() => {
     const getPosts = async () => {
