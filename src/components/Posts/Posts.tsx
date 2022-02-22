@@ -24,7 +24,7 @@ const Posts = ({ posts, theme }: PostsProps) => (
               firebase.logEvent("select_content", {
                 content_type: "post",
                 item_id: target,
-                item_name: info,
+                item_name: "Post -> " +info,
               });
             }}
             // eslint-disable-next-line
@@ -40,7 +40,7 @@ const Posts = ({ posts, theme }: PostsProps) => (
               firebase.logEvent("select_content", {
                 content_type: "post",
                 item_id: target,
-                item_name: info,
+                item_name: "Post -> " +info,
               });
               // ga('send', 'event', 'Posts', 'click', target)
             }}

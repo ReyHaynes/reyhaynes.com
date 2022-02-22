@@ -43,6 +43,7 @@ const Theme = ({ theme, content }: ThemeProps) => (
                 firebase.logEvent("select_content", {
                   content_type: "footer",
                   item_id: "Github",
+                  item_name: "Footer -> Github",
                 });
               }}
               // eslint-disable-next-line
@@ -58,6 +59,7 @@ const Theme = ({ theme, content }: ThemeProps) => (
                 firebase.logEvent("select_content", {
                   content_type: "footer",
                   item_id: "Username",
+                  item_name: "Footer -> Username",
                 });
               }}
             >
