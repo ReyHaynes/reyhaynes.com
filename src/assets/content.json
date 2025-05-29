@@ -10,7 +10,8 @@
     { "social": "instagram", "target": "https://instagram.com/ReyHaynes" },
     { "social": "medium", "target": "https://medium.com/@reyhaynes" },
     { "social": "linkedin", "target": "https://www.linkedin.com/in/reyhaynes/" },
-    { "social": "twitter", "target": "https://twitter.com/ReyHaynes" }
+    { "social": "twitter", "target": "https://twitter.com/ReyHaynes" },
+    { "social": "work", "target": "https://resume.reyhanes.com" }
   ],
   "posts": [{}]
 }
